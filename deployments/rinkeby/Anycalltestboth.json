@@ -1,0 +1,293 @@
+{
+  "address": "0xa5035F3eea31952c1DB0b0B8c7C877eD72ABA70C",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_anycallcontract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_destchain",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_fromChainId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ContextEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "msg",
+          "type": "string"
+        }
+      ],
+      "name": "NewMsg",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "anyExecute",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        },
+        {
+          "internalType": "bytes",
+          "name": "result",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "anycallcontract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_destcontract",
+          "type": "address"
+        }
+      ],
+      "name": "changedestinationcontract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_contractcaller",
+          "type": "address"
+        }
+      ],
+      "name": "changeverifiedcaller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "destchain",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owneraddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "receivercontract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_msg",
+          "type": "string"
+        }
+      ],
+      "name": "step1_initiateAnyCallSimple",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_msg",
+          "type": "string"
+        }
+      ],
+      "name": "step1_initiateAnyCallSimple_srcfee",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "verifiedcaller",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xcd9521cfdd6f62124ac40718b21512d1da34bea97a82e3714ab274fa8cb04ce6",
+  "receipt": {
+    "to": null,
+    "from": "0x922C46Cb18d99940Eb885B8581e7479448E3f46B",
+    "contractAddress": "0xa5035F3eea31952c1DB0b0B8c7C877eD72ABA70C",
+    "transactionIndex": 8,
+    "gasUsed": "611870",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x1472fb47451c21c2e5794fd9c08e4fbd4cf11be576271fabcb81e95b35026d86",
+    "transactionHash": "0xcd9521cfdd6f62124ac40718b21512d1da34bea97a82e3714ab274fa8cb04ce6",
+    "logs": [],
+    "blockNumber": 11388140,
+    "cumulativeGasUsed": "3881263",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x273a4fFcEb31B8473D51051Ad2a2EdbB7Ac8Ce02",
+    "4002"
+  ],
+  "numDeployments": 3,
+  "solcInputHash": "842fe9066c3511fc27ced3f96cbf45db",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_anycallcontract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_destchain\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_fromChainId\",\"type\":\"uint256\"}],\"name\":\"ContextEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"msg\",\"type\":\"string\"}],\"name\":\"NewMsg\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"anyExecute\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"result\",\"type\":\"bytes\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"anycallcontract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_destcontract\",\"type\":\"address\"}],\"name\":\"changedestinationcontract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contractcaller\",\"type\":\"address\"}],\"name\":\"changeverifiedcaller\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"destchain\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owneraddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"receivercontract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_msg\",\"type\":\"string\"}],\"name\":\"step1_initiateAnyCallSimple\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_msg\",\"type\":\"string\"}],\"name\":\"step1_initiateAnyCallSimple_srcfee\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"verifiedcaller\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/AnyCallSimple.sol\":\"Anycalltestboth\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/AnyCallSimple.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.2;\\r\\n\\r\\ninterface CallProxy{\\r\\n    function anyCall(\\r\\n        address _to,\\r\\n        bytes calldata _data,\\r\\n        address _fallback,\\r\\n        uint256 _toChainID,\\r\\n        uint256 _flags\\r\\n\\r\\n    ) external payable;\\r\\n\\r\\n    function context() external view returns (address from, uint256 fromChainID, uint256 nonce);\\r\\n    \\r\\n    function executor() external view returns (address executor);\\r\\n}\\r\\n\\r\\n  \\r\\n\\r\\ncontract Anycalltestboth{\\r\\n    //real one 0x37414a8662bC1D25be3ee51Fb27C2686e2490A89\\r\\n\\r\\n    // The FTM testnet anycall contract\\r\\n    address public anycallcontract;\\r\\n    // address public anycallExecutor;\\r\\n    \\r\\n\\r\\n    address public owneraddress;\\r\\n\\r\\n    // Our Destination contract on Rinkeby testnet\\r\\n    address public receivercontract=0x0B9d284F411Aa8997c1E8286675E0ba2f6a5A4B3;\\r\\n    \\r\\n\\r\\n\\r\\n    address public verifiedcaller;\\r\\n\\r\\n    uint public destchain;\\r\\n    event NewMsg(string msg);\\r\\n\\r\\n    receive() external payable {}\\r\\n\\r\\n    fallback() external payable {}\\r\\n\\r\\n    constructor(address _anycallcontract,uint _destchain){\\r\\n        anycallcontract=_anycallcontract;\\r\\n        owneraddress=msg.sender;\\r\\n        destchain=_destchain;\\r\\n        // anycallExecutor=CallProxy(anycallcontract).executor();\\r\\n        \\r\\n    }\\r\\n    \\r\\n    modifier onlyowner() {\\r\\n        require(msg.sender == owneraddress, \\\"only owner can call this method\\\");\\r\\n        _;\\r\\n    }\\r\\n    function changedestinationcontract(address _destcontract) onlyowner external {\\r\\n        receivercontract=_destcontract;\\r\\n    }\\r\\n\\r\\n    function changeverifiedcaller(address _contractcaller) onlyowner external {\\r\\n        verifiedcaller=_contractcaller;\\r\\n    }\\r\\n    function step1_initiateAnyCallSimple(string calldata _msg) external {\\r\\n        emit NewMsg(_msg);\\r\\n        if (msg.sender == owneraddress){\\r\\n        CallProxy(anycallcontract).anyCall(\\r\\n            receivercontract,\\r\\n\\r\\n            // sending the encoded bytes of the string msg and decode on the destination chain\\r\\n            abi.encode(_msg),\\r\\n            address(0),\\r\\n            destchain,\\r\\n\\r\\n            // Using 0 flag to pay fee on destination chain\\r\\n            0\\r\\n            );\\r\\n            \\r\\n        }\\r\\n\\r\\n    }\\r\\n\\r\\n    function step1_initiateAnyCallSimple_srcfee(string calldata _msg) payable external {\\r\\n        emit NewMsg(_msg);\\r\\n        if (msg.sender == owneraddress){\\r\\n        CallProxy(anycallcontract).anyCall{value: msg.value}(\\r\\n            receivercontract,\\r\\n\\r\\n            // sending the encoded bytes of the string msg and decode on the destination chain\\r\\n            abi.encode(_msg),\\r\\n            address(0),\\r\\n            destchain,\\r\\n\\r\\n            // Using 0 flag to pay fee on destination chain\\r\\n            2\\r\\n            );\\r\\n            \\r\\n        }\\r\\n\\r\\n    }\\r\\n\\r\\n\\r\\n    event ContextEvent( address indexed _from, uint256 indexed _fromChainId);\\r\\n\\r\\n    // anyExecute has to be role controlled by onlyMPC so it's only called by MPC\\r\\n   function anyExecute(bytes memory _data) external returns (bool success, bytes memory result){\\r\\n        (string memory _msg) = abi.decode(_data, (string));  \\r\\n        // (address from, uint256 fromChainId,) = CallProxy(anycallExecutor).context();\\r\\n        // require(verifiedcaller == from, \\\"AnycallClient: wrong context\\\");\\r\\n        emit NewMsg(_msg);\\r\\n        // emit ContextEvent(from,fromChainId);\\r\\n        success=true;\\r\\n        result='';\\r\\n\\r\\n    }\\r\\n\\r\\n    // function checkContext() external view returns (address,address,uint256,uint256){\\r\\n\\r\\n\\r\\n    //     (address from, uint256 fromChainId,uint256 nonce) = CallProxy(anycallExecutor).context();\\r\\n    //     // emit NewMsg(executoraddress);\\r\\n    //     // emit ContextEvent(from,fromChainId);\\r\\n    //     return ( anycallExecutor,from, fromChainId,nonce);\\r\\n\\r\\n    // }\\r\\n\\r\\n}\",\"keccak256\":\"0x9966b290ca8e68b75b523c2ac002d9373b2320e8e524593f5e634afd66735cac\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052600280546001600160a01b031916730b9d284f411aa8997c1e8286675e0ba2f6a5a4b317905534801561003657600080fd5b5060405161094238038061094283398101604081905261005591610087565b600080546001600160a01b039093166001600160a01b03199384161790556001805490921633179091556004556100c1565b6000806040838503121561009a57600080fd5b82516001600160a01b03811681146100b157600080fd5b6020939093015192949293505050565b610872806100d06000396000f3fe60806040526004361061008f5760003560e01c806394d7441e1161005657806394d7441e146101595780639abaf47914610179578063aaa48425146101a7578063d2645dd9146101c7578063f6002028146101da57005b806320f75e851461009857806323ea4877146100b857806347d8937d146100d85780637e1766e91461010157806380f1f33c1461013957005b3661009657005b005b3480156100a457600080fd5b506100966100b3366004610535565b6101fa565b3480156100c457600080fd5b506100966100d3366004610535565b61027b565b3480156100e457600080fd5b506100ee60045481565b6040519081526020015b60405180910390f35b34801561010d57600080fd5b50600354610121906001600160a01b031681565b6040516001600160a01b0390911681526020016100f8565b34801561014557600080fd5b50610096610154366004610565565b6102f7565b34801561016557600080fd5b50600254610121906001600160a01b031681565b34801561018557600080fd5b50610199610194366004610646565b6103dd565b6040516100f8929190610722565b3480156101b357600080fd5b50600154610121906001600160a01b031681565b6100966101d5366004610565565b61044c565b3480156101e657600080fd5b50600054610121906001600160a01b031681565b6001546001600160a01b031633146102595760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c79206f776e65722063616e2063616c6c2074686973206d6574686f640060448201526064015b60405180910390fd5b600280546001600160a01b0319166001600160a01b0392909216919091179055565b6001546001600160a01b031633146102d55760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c79206f776e65722063616e2063616c6c2074686973206d6574686f64006044820152606401610250565b600380546001600160a01b0319166001600160a01b0392909216919091179055565b7f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc1758282604051610328929190610745565b60405180910390a16001546001600160a01b03163314156103d9576000546002546040516001600160a01b039283169263bd45c4e79216906103709086908690602001610745565b60408051601f1981840301815290829052600480546001600160e01b031960e087901b1684526103a69493600092839101610774565b600060405180830381600087803b1580156103c057600080fd5b505af11580156103d4573d6000803e3d6000fd5b505050505b5050565b600060606000838060200190518101906103f791906107b2565b90507f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc175816040516104289190610829565b60405180910390a16001925060405180602001604052806000815250915050915091565b7f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc175828260405161047d929190610745565b60405180910390a16001546001600160a01b03163314156103d9576000546002546040516001600160a01b039283169263bd45c4e79234929116906104c89087908790602001610745565b60408051601f1981840301815290829052600480546001600160e01b031960e088901b1684526104ff949360009260029101610774565b6000604051808303818588803b15801561051857600080fd5b505af115801561052c573d6000803e3d6000fd5b50505050505050565b60006020828403121561054757600080fd5b81356001600160a01b038116811461055e57600080fd5b9392505050565b6000806020838503121561057857600080fd5b823567ffffffffffffffff8082111561059057600080fd5b818501915085601f8301126105a457600080fd5b8135818111156105b357600080fd5b8660208285010111156105c557600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610616576106166105d7565b604052919050565b600067ffffffffffffffff821115610638576106386105d7565b50601f01601f191660200190565b60006020828403121561065857600080fd5b813567ffffffffffffffff81111561066f57600080fd5b8201601f8101841361068057600080fd5b803561069361068e8261061e565b6105ed565b8181528560208385010111156106a857600080fd5b81602084016020830137600091810160200191909152949350505050565b60005b838110156106e15781810151838201526020016106c9565b838111156106f0576000848401525b50505050565b6000815180845261070e8160208601602086016106c6565b601f01601f19169290920160200192915050565b821515815260406020820152600061073d60408301846106f6565b949350505050565b60208152816020820152818360408301376000818301604090810191909152601f909201601f19160101919050565b600060018060a01b03808816835260a0602084015261079660a08401886106f6565b9516604083015250606081019290925260809091015292915050565b6000602082840312156107c457600080fd5b815167ffffffffffffffff8111156107db57600080fd5b8201601f810184136107ec57600080fd5b80516107fa61068e8261061e565b81815285602083850101111561080f57600080fd5b6108208260208301602086016106c6565b95945050505050565b60208152600061055e60208301846106f656fea2646970667358221220856da7fab37fa6bb589028fbdd7d7d620720ec0fe487d8d8e019bb9b9c139fe564736f6c634300080a0033",
+  "deployedBytecode": "0x60806040526004361061008f5760003560e01c806394d7441e1161005657806394d7441e146101595780639abaf47914610179578063aaa48425146101a7578063d2645dd9146101c7578063f6002028146101da57005b806320f75e851461009857806323ea4877146100b857806347d8937d146100d85780637e1766e91461010157806380f1f33c1461013957005b3661009657005b005b3480156100a457600080fd5b506100966100b3366004610535565b6101fa565b3480156100c457600080fd5b506100966100d3366004610535565b61027b565b3480156100e457600080fd5b506100ee60045481565b6040519081526020015b60405180910390f35b34801561010d57600080fd5b50600354610121906001600160a01b031681565b6040516001600160a01b0390911681526020016100f8565b34801561014557600080fd5b50610096610154366004610565565b6102f7565b34801561016557600080fd5b50600254610121906001600160a01b031681565b34801561018557600080fd5b50610199610194366004610646565b6103dd565b6040516100f8929190610722565b3480156101b357600080fd5b50600154610121906001600160a01b031681565b6100966101d5366004610565565b61044c565b3480156101e657600080fd5b50600054610121906001600160a01b031681565b6001546001600160a01b031633146102595760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c79206f776e65722063616e2063616c6c2074686973206d6574686f640060448201526064015b60405180910390fd5b600280546001600160a01b0319166001600160a01b0392909216919091179055565b6001546001600160a01b031633146102d55760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c79206f776e65722063616e2063616c6c2074686973206d6574686f64006044820152606401610250565b600380546001600160a01b0319166001600160a01b0392909216919091179055565b7f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc1758282604051610328929190610745565b60405180910390a16001546001600160a01b03163314156103d9576000546002546040516001600160a01b039283169263bd45c4e79216906103709086908690602001610745565b60408051601f1981840301815290829052600480546001600160e01b031960e087901b1684526103a69493600092839101610774565b600060405180830381600087803b1580156103c057600080fd5b505af11580156103d4573d6000803e3d6000fd5b505050505b5050565b600060606000838060200190518101906103f791906107b2565b90507f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc175816040516104289190610829565b60405180910390a16001925060405180602001604052806000815250915050915091565b7f398815baeb0820d3e2c52be1de829fc597863cd6cce7d84c712074b5027bc175828260405161047d929190610745565b60405180910390a16001546001600160a01b03163314156103d9576000546002546040516001600160a01b039283169263bd45c4e79234929116906104c89087908790602001610745565b60408051601f1981840301815290829052600480546001600160e01b031960e088901b1684526104ff949360009260029101610774565b6000604051808303818588803b15801561051857600080fd5b505af115801561052c573d6000803e3d6000fd5b50505050505050565b60006020828403121561054757600080fd5b81356001600160a01b038116811461055e57600080fd5b9392505050565b6000806020838503121561057857600080fd5b823567ffffffffffffffff8082111561059057600080fd5b818501915085601f8301126105a457600080fd5b8135818111156105b357600080fd5b8660208285010111156105c557600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b604051601f8201601f1916810167ffffffffffffffff81118282101715610616576106166105d7565b604052919050565b600067ffffffffffffffff821115610638576106386105d7565b50601f01601f191660200190565b60006020828403121561065857600080fd5b813567ffffffffffffffff81111561066f57600080fd5b8201601f8101841361068057600080fd5b803561069361068e8261061e565b6105ed565b8181528560208385010111156106a857600080fd5b81602084016020830137600091810160200191909152949350505050565b60005b838110156106e15781810151838201526020016106c9565b838111156106f0576000848401525b50505050565b6000815180845261070e8160208601602086016106c6565b601f01601f19169290920160200192915050565b821515815260406020820152600061073d60408301846106f6565b949350505050565b60208152816020820152818360408301376000818301604090810191909152601f909201601f19160101919050565b600060018060a01b03808816835260a0602084015261079660a08401886106f6565b9516604083015250606081019290925260809091015292915050565b6000602082840312156107c457600080fd5b815167ffffffffffffffff8111156107db57600080fd5b8201601f810184136107ec57600080fd5b80516107fa61068e8261061e565b81815285602083850101111561080f57600080fd5b6108208260208301602086016106c6565b95945050505050565b60208152600061055e60208301846106f656fea2646970667358221220856da7fab37fa6bb589028fbdd7d7d620720ec0fe487d8d8e019bb9b9c139fe564736f6c634300080a0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 31,
+        "contract": "contracts/AnyCallSimple.sol:Anycalltestboth",
+        "label": "anycallcontract",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 33,
+        "contract": "contracts/AnyCallSimple.sol:Anycalltestboth",
+        "label": "owneraddress",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 36,
+        "contract": "contracts/AnyCallSimple.sol:Anycalltestboth",
+        "label": "receivercontract",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      },
+      {
+        "astId": 38,
+        "contract": "contracts/AnyCallSimple.sol:Anycalltestboth",
+        "label": "verifiedcaller",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      },
+      {
+        "astId": 40,
+        "contract": "contracts/AnyCallSimple.sol:Anycalltestboth",
+        "label": "destchain",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

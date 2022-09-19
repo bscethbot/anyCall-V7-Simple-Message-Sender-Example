@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/AnyCallSimple.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.2;\r\n\r\ninterface CallProxy{\r\n    function anyCall(\r\n        address _to,\r\n        bytes calldata _data,\r\n        address _fallback,\r\n        uint256 _toChainID,\r\n        uint256 _flags\r\n\r\n    ) external payable;\r\n\r\n    function context() external view returns (address from, uint256 fromChainID, uint256 nonce);\r\n    \r\n    function executor() external view returns (address executor);\r\n}\r\n\r\n  \r\n\r\ncontract Anycalltestboth{\r\n    //real one 0x37414a8662bC1D25be3ee51Fb27C2686e2490A89\r\n\r\n    // The FTM testnet anycall contract\r\n    address public anycallcontract;\r\n    // address public anycallExecutor;\r\n    uint destchain=4;\r\n\r\n    address public owneraddress;\r\n\r\n    // Our Destination contract on Rinkeby testnet\r\n    address public receivercontract=0x0B9d284F411Aa8997c1E8286675E0ba2f6a5A4B3;\r\n    \r\n\r\n\r\n    address public verifiedcaller;\r\n\r\n    \r\n    event NewMsg(string msg);\r\n\r\n    receive() external payable {}\r\n\r\n    fallback() external payable {}\r\n\r\n    constructor(address _anycallcontract){\r\n        anycallcontract=_anycallcontract;\r\n        owneraddress=msg.sender;\r\n        // anycallExecutor=CallProxy(anycallcontract).executor();\r\n    }\r\n    \r\n    modifier onlyowner() {\r\n        require(msg.sender == owneraddress, \"only owner can call this method\");\r\n        _;\r\n    }\r\n    function changedestinationcontract(address _destcontract) onlyowner external {\r\n        receivercontract=_destcontract;\r\n    }\r\n\r\n    function changeverifiedcaller(address _contractcaller) onlyowner external {\r\n        verifiedcaller=_contractcaller;\r\n    }\r\n    function step1_initiateAnyCallSimple(string calldata _msg) external {\r\n        emit NewMsg(_msg);\r\n        if (msg.sender == owneraddress){\r\n        CallProxy(anycallcontract).anyCall(\r\n            receivercontract,\r\n\r\n            // sending the encoded bytes of the string msg and decode on the destination chain\r\n            abi.encode(_msg),\r\n            address(0),\r\n            destchain,\r\n\r\n            // Using 0 flag to pay fee on destination chain\r\n            0\r\n            );\r\n            \r\n        }\r\n\r\n    }\r\n\r\n    function step1_initiateAnyCallSimple_srcfee(string calldata _msg) payable external {\r\n        emit NewMsg(_msg);\r\n        if (msg.sender == owneraddress){\r\n        CallProxy(anycallcontract).anyCall{value: msg.value}(\r\n            receivercontract,\r\n\r\n            // sending the encoded bytes of the string msg and decode on the destination chain\r\n            abi.encode(_msg),\r\n            address(0),\r\n            destchain,\r\n\r\n            // Using 0 flag to pay fee on destination chain\r\n            2\r\n            );\r\n            \r\n        }\r\n\r\n    }\r\n\r\n\r\n    event ContextEvent( address indexed _from, uint256 indexed _fromChainId);\r\n\r\n    // anyExecute has to be role controlled by onlyMPC so it's only called by MPC\r\n   function anyExecute(bytes memory _data) external returns (bool success, bytes memory result){\r\n        (string memory _msg) = abi.decode(_data, (string));  \r\n        // (address from, uint256 fromChainId,) = CallProxy(anycallExecutor).context();\r\n        // require(verifiedcaller == from, \"AnycallClient: wrong context\");\r\n        emit NewMsg(_msg);\r\n        // emit ContextEvent(from,fromChainId);\r\n        success=true;\r\n        result='';\r\n\r\n    }\r\n\r\n    // function checkContext() external view returns (address,address,uint256,uint256){\r\n\r\n\r\n    //     (address from, uint256 fromChainId,uint256 nonce) = CallProxy(anycallExecutor).context();\r\n    //     // emit NewMsg(executoraddress);\r\n    //     // emit ContextEvent(from,fromChainId);\r\n    //     return ( anycallExecutor,from, fromChainId,nonce);\r\n\r\n    // }\r\n\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
