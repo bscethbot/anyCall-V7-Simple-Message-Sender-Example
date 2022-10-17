@@ -5,10 +5,9 @@ interface CallProxy{
     function anyCall(
         address _to,
         bytes calldata _data,
-        address _fallback,
         uint256 _toChainID,
-        uint256 _flags
-
+        uint256 _flags,
+        bytes calldata _extdata
     ) external payable;
 
     function context() external view returns (address from, uint256 fromChainID, uint256 nonce);
@@ -29,7 +28,7 @@ contract Anycalltestboth{
     address public owneraddress;
 
     // Our Destination contract on Rinkeby testnet
-    address public receivercontract=0x0B9d284F411Aa8997c1E8286675E0ba2f6a5A4B3;
+    address public receivercontract;
     
 
 
@@ -61,24 +60,6 @@ contract Anycalltestboth{
     function changeverifiedcaller(address _contractcaller) onlyowner external {
         verifiedcaller=_contractcaller;
     }
-    function step1_initiateAnyCallSimple(string calldata _msg) external {
-        emit NewMsg(_msg);
-        if (msg.sender == owneraddress){
-        CallProxy(anycallcontract).anyCall(
-            receivercontract,
-
-            // sending the encoded bytes of the string msg and decode on the destination chain
-            abi.encode(_msg),
-            address(0),
-            destchain,
-
-            // Using 0 flag to pay fee on destination chain
-            0
-            );
-            
-        }
-
-    }
 
     function step1_initiateAnyCallSimple_srcfee(string calldata _msg) payable external {
         emit NewMsg(_msg);
@@ -88,11 +69,12 @@ contract Anycalltestboth{
 
             // sending the encoded bytes of the string msg and decode on the destination chain
             abi.encode(_msg),
-            address(0),
+
             destchain,
 
-            // Using 0 flag to pay fee on destination chain
-            2
+            // Using 0 flag to pay fee on the source chain
+            0,
+            ""
             );
             
         }

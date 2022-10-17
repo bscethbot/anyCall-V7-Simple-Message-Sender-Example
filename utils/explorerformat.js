@@ -1,4 +1,4 @@
-module.exports = async function formatExplorerLink(txhash,chainid){
+module.exports = async function formatExplorerLink(txhash,chainid,isEventbool){
     const chainidToExplorer={
         '80001':'https://mumbai.polygonscan.com/tx/',
         '97':'https://testnet.bscscan.com/tx/',
@@ -6,7 +6,11 @@ module.exports = async function formatExplorerLink(txhash,chainid){
         '4002':'https://testnet.ftmscan.com/tx/'
     }
 
-    const url=`${chainidToExplorer[chainid]}${txhash}`
+    let url=`${chainidToExplorer[chainid]}${txhash}`
+
+    if (isEventbool){
+        url+='#eventlog'
+    }
     console.log(url)
     return url
 }

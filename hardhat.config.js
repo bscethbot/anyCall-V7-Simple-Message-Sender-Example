@@ -2,7 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy")
 require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
-require('./tasks')
+
 const bnbtestnetrpc=process.env.bnbtestnetrpc
 const prvkey=process.env.prvkey
 const bscscanapi=process.env.bscscanapi
@@ -51,6 +51,13 @@ module.exports = {
       chainId:80001,
       blockConfirmations:5,
     }
+    ,
+    goerli:{
+      url:process.env.goerlirpc,
+      accounts:[prvkey],
+      chainId:5,
+      blockConfirmations:5,
+    }
   },
   solidity:{
     version: "0.8.10",
@@ -64,7 +71,8 @@ module.exports = {
   etherscan:{apiKey:{
     bscTestnet:bscscanapi,
     ftmTestnet:ftmscanapi,
-    rinkeby:rinkebyscanapi
+    rinkeby:rinkebyscanapi,
+    goerli:process.env.goerliscanapi
   }},
   namedAccounts:{
     testnetdeployer:{

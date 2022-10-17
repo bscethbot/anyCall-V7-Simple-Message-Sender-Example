@@ -6,7 +6,9 @@
 // global scope, and execute the script.
 const {network} =require("hardhat")
 const {verify}=require("../utils/verify")
-
+const contractaddresses =require ("../config/contractaddresses")
+const formatExplorerLink=require('../utils/explorerformat')
+const anycalladdressobj=contractaddresses['anycalladdressobj']
 
 module.exports = async ({getNamedAccounts,deployments})=>{
   const {deploy,log}=deployments
@@ -14,15 +16,13 @@ module.exports = async ({getNamedAccounts,deployments})=>{
   const chainid=network.config.chainId
   log(`youre workign with network ${chainid}`)
   // (string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
-  const anycalladdressobj={
-    4:'0x273a4fFcEb31B8473D51051Ad2a2EdbB7Ac8Ce02',
-    4002:'0xD7c295E399CA928A3a14b01D760E794f1AdF8990'
-  }
-  const allchainids=['4','4002']
+
+  const allchainids=['97','4002']
   let destchainid = allchainids.filter(x => x!=chainid)
   console.log(`dest chain id is ${destchainid}`)
   let anycalladdress
   if (!anycalladdressobj[chainid]){
+    throw 'no anycall address'
     anycalladdress='0xD7c295E399CA928A3a14b01D760E794f1AdF8990'
   }
   else{

@@ -13,10 +13,12 @@ function sleep(millis) {
     return new Promise((resolve) => setTimeout(resolve, millis))
   }
 
+// edit this to change the msg sent cross-chain
+const customMessage='Proof of cross-chain anyCall msg'
 async function testanycall(){
     const chainid=network.config.chainId
 
-    const allchainids=[4,4002]
+    const allchainids=[97,4002]
     let destchainid = allchainids.filter(x => x!=chainid)[0]
     const targetNetwork=chainidToNetwork[destchainid]
 
@@ -36,7 +38,7 @@ async function testanycall(){
     if (receiver!=expectedreceiver){
         const changerecieverlog=await contract.changedestinationcontract(expectedreceiver)
 
-        console.log(`changed receiver result ${changerecieverlog}`)
+        console.log(`changed receiver`)
         changerecieverlog.wait(1)
     }
     else{
@@ -45,51 +47,30 @@ async function testanycall(){
 
     console.log('issue anycall now')
     // 0.0003 ether 300000000000000
-    const anycallstep1log=await contract.step1_initiateAnyCallSimple_srcfee(expectedreceiver,{value:'300000000000000'})
-    console.log(anycallstep1log.hash)
-    formatExplorerLink(anycallstep1log.hash,chainid)
+    const anycallstep1log=await contract.step1_initiateAnyCallSimple_srcfee(customMessage,{value:'30000000000000000'})
+    await anycallstep1log.wait(1);
+    console.log('Your tx is below')
+    formatExplorerLink(anycallstep1log.hash,chainid,false)
     const executedbool=await pollAnyexec(destchainid,anycallstep1log.hash)
     console.log(`executedbool is ${executedbool}`)
     return executedbool
 }
 
-async function pushover(){
-    const data = {
-        token: 'aafcr7mhw2iqnucyovjaafx8ofc969',
-        user: 'ubewsmv2ynv55s4nxrz7o9depcjay9',
-        message:'anycall fail',
-
-    }
-
-    const res =await axios.post('https://api.pushover.net/1/messages.json', data)
-
-    console.log(`Status: ${res.status}`);
-    console.log('Body: ', res.data);
-}
 
 async function main() {
    
 
-    while (true){
+
     const anycallbool=await testanycall()
 
-    if (anycallbool!=true){
-        console.log('anycall failed')
-
-        for (let i = 0; i < 10; i++) { 
-
-        console.log('sending notification')
-        await pushover()
-        await sleep(180000)
-    }
+    if (anycallbool==true){
+        console.log('Your cross-chain message is successful')
 
     }
-    console.log('sleep a bit now')
-    await sleep(600000)
+
 
 }
   
-  }
   
   // We recommend this pattern to be able to use async/await everywhere
   // and properly handle errors.
