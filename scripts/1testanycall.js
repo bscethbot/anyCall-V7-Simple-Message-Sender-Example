@@ -5,7 +5,6 @@ const { getDeploymentAddresses } = require("../utils/readStatic")
 const chainidToNetwork = require("../config/chainidToNetwork")
 const pollAnyexec=require('./pollAnyexecEthers')
 const formatExplorerLink=require('../utils/explorerformat')
-const axios = require('axios');
 
 
 
@@ -15,6 +14,7 @@ function sleep(millis) {
 
 // edit this to change the msg sent cross-chain
 const customMessage='Proof of cross-chain anyCall msg'
+
 async function testanycall(){
     const chainid=network.config.chainId
 
@@ -39,7 +39,7 @@ async function testanycall(){
         const changerecieverlog=await contract.changedestinationcontract(expectedreceiver)
 
         console.log(`changed receiver`)
-        changerecieverlog.wait(1)
+        changerecieverlog.wait(3)
     }
     else{
         console.log('receiver is correct')
@@ -49,7 +49,7 @@ async function testanycall(){
     // 0.0003 ether 300000000000000
     const anycallstep1log=await contract.step1_initiateAnyCallSimple_srcfee(customMessage,{value:'30000000000000000'})
     await anycallstep1log.wait(1);
-    console.log('Your tx is below')
+    console.log('Your anyCall tx is below')
     formatExplorerLink(anycallstep1log.hash,chainid,false)
     const executedbool=await pollAnyexec(destchainid,anycallstep1log.hash)
     console.log(`executedbool is ${executedbool}`)
