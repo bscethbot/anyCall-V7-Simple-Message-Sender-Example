@@ -8,8 +8,7 @@ const prvkey=process.env.prvkey
 const bscscanapi=process.env.bscscanapi
 const ftmtestnetrpc=process.env.ftmtestnetrpc
 const ftmscanapi=process.env.ftmscanapi
-const rinkebyrpc=process.env.rinkebyrpc
-const rinkebyscanapi=process.env.rinkebyscanapi
+
 
 const mumbairpc=process.env.mumbairpc
 /** @type import('hardhat/config').HardhatUserConfig */
