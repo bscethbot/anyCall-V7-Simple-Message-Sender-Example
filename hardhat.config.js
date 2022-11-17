@@ -38,12 +38,7 @@ module.exports = {
       chainId:4002,
       blockConfirmations:1,
     },
-    rinkeby:{
-      url:rinkebyrpc,
-      accounts:[prvkey],
-      chainId:4,
-      blockConfirmations:5,
-    },
+    
     polygonmumbai:{
       url:mumbairpc,
       accounts:[prvkey],
@@ -70,7 +65,7 @@ module.exports = {
   etherscan:{apiKey:{
     bscTestnet:bscscanapi,
     ftmTestnet:ftmscanapi,
-    rinkeby:rinkebyscanapi,
+
     goerli:process.env.goerliscanapi
   }},
   namedAccounts:{

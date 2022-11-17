@@ -46,7 +46,7 @@ async function testanycall(){
     }
 
     console.log('issue anycall now')
-    // 0.0003 ether 300000000000000
+
     const anycallstep1log=await contract.step1_initiateAnyCallSimple_srcfee(customMessage,{value:'30000000000000000'})
     await anycallstep1log.wait(1);
     console.log('Your anyCall tx is below')

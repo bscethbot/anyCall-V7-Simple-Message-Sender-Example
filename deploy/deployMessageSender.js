@@ -1,9 +1,4 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
+
 const {network} =require("hardhat")
 const {verify}=require("../utils/verify")
 const contractaddresses =require ("../config/contractaddresses")
@@ -15,7 +10,7 @@ module.exports = async ({getNamedAccounts,deployments})=>{
   const {testnetdeployer}=await getNamedAccounts()
   const chainid=network.config.chainId
   log(`youre workign with network ${chainid}`)
-  // (string memory _name, string memory _symbol, uint8 _decimals, address _underlying, address _vault) {
+
 
   const allchainids=['97','4002']
   let destchainid = allchainids.filter(x => x!=chainid)
