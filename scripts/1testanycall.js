@@ -1,3 +1,4 @@
+require('@oasisprotocol/sapphire-hardhat');
 const hre = require("hardhat");
 const ethers=hre.ethers
 const {network} =require("hardhat")
@@ -18,7 +19,7 @@ const customMessage='Proof of cross-chain anyCall msg'
 async function testanycall(){
     const chainid=network.config.chainId
 
-    const allchainids=[97,4002]
+    const allchainids=[137,23294]
     let destchainid = allchainids.filter(x => x!=chainid)[0]
     const targetNetwork=chainidToNetwork[destchainid]
 

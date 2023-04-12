@@ -1,4 +1,5 @@
 
+require("@oasisprotocol/sapphire-hardhat")
 const {network} =require("hardhat")
 const {verify}=require("../utils/verify")
 const contractaddresses =require ("../config/contractaddresses")
@@ -7,12 +8,12 @@ const anycalladdressobj=contractaddresses['anycalladdressobj']
 
 module.exports = async ({getNamedAccounts,deployments})=>{
   const {deploy,log}=deployments
-  const {testnetdeployer}=await getNamedAccounts()
+  const {maindeployer}=await getNamedAccounts()
   const chainid=network.config.chainId
   log(`youre workign with network ${chainid}`)
 
 
-  const allchainids=['97','4002']
+  const allchainids=['137','23294']
   let destchainid = allchainids.filter(x => x!=chainid)
   console.log(`dest chain id is ${destchainid}`)
   let anycalladdress
@@ -26,7 +27,7 @@ module.exports = async ({getNamedAccounts,deployments})=>{
   
   const args=[anycalladdress,destchainid[0]]
   const anycalltest=await deploy("Anycalltestboth",{
-    from:testnetdeployer,
+    from:maindeployer,
     args:args,
     log:true,
     waitConfirmations:network.config.blockConfirmations||1,

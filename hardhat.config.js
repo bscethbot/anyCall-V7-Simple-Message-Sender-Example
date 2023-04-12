@@ -1,3 +1,4 @@
+require('@oasisprotocol/sapphire-hardhat');
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy")
 require("dotenv").config()
@@ -8,7 +9,8 @@ const prvkey=process.env.prvkey
 const bscscanapi=process.env.bscscanapi
 const ftmtestnetrpc=process.env.ftmtestnetrpc
 const ftmscanapi=process.env.ftmscanapi
-
+const sapphirerpc=process.env.sapphirerpc
+const polygonrpc=process.env.polygonrpc
 
 const mumbairpc=process.env.mumbairpc
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -38,14 +40,24 @@ module.exports = {
       chainId:4002,
       blockConfirmations:1,
     },
-    
+    sapphire:{
+      url:sapphirerpc,
+      accounts:[prvkey],
+      chainId:23294,
+      blockConfirmations:1,
+    },
+    polygon:{
+      url:polygonrpc,
+      accounts:[prvkey],
+      chainId:137,
+      blockConfirmations:5,
+    },
     polygonmumbai:{
       url:mumbairpc,
       accounts:[prvkey],
       chainId:80001,
       blockConfirmations:5,
-    }
-    ,
+    },
     goerli:{
       url:process.env.goerlirpc,
       accounts:[prvkey],
@@ -73,7 +85,7 @@ module.exports = {
       default:0,
     },
     maindeployer:{
-      default:1,
+      default:0,
     }
   }
 };
