@@ -85,7 +85,7 @@ module.exports = {
       default:0,
     },
     maindeployer:{
-      default:1,
+      default:0,
     }
   }
 };
